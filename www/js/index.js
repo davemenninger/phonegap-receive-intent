@@ -27,6 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', function(){console.log("something");}, false);
+        //document.addEventListener('deviceready', function(){alert("something");}, false);
     },
     // deviceready Event Handler
     //
