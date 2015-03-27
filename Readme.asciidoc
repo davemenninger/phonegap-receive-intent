@@ -1,0 +1,9 @@
+= trying to get a phonegap app to receive an android send intent
+
+== steps
+
+* create default cordova app
+* add plugins with cordova plugin add ( is this needed? )
+* add plugins to config.xml
+* add webintent.js to www/js/
+* add references to webintent.js to index.html
