@@ -5,5 +5,12 @@
             "url": "https://github.com/Tunts/WebIntent.git",
             "subdir": "."
         }
+    },
+    "uk.co.ibcomputing.phonegapbuild.plugins.receivesendintents": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ibcomputing/phonegapbuildReceiveSendIntents.git",
+            "subdir": "."
+        }
     }
 }
