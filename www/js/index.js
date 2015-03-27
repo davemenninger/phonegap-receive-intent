@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', function(){ console.log("wtf") }, false);
     },
     // deviceready Event Handler
     //
@@ -34,13 +35,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        window.plugins.webintent.getExtra(WebIntent.EXTRA\_TEXT, function (url) {
-            //url is the value of EXTRA_TEXT
-            alert( "hello: " + url );
-        }, function() {
-            // There was no extra supplied.
-            alert( "there was no extra supplied" );
-        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
