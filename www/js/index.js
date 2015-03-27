@@ -27,6 +27,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', function () {
+            window.plugins.webintent.getExtra(WebIntent.EXTRA\_TEXT, function(url) {
+                alert("extra text was: "+url);
+            }, function() {
+                alert("extra was empty.");
+            });
+        });
     },
     // deviceready Event Handler
     //
