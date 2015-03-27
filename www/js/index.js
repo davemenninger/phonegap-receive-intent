@@ -30,7 +30,7 @@ var app = {
         document.addEventListener('deviceready', function(){ console.log("wtf") }, false);
         document.addEventListener('deviceready', function () {
             window.plugins.webintent.getExtra(WebIntent.EXTRA\_TEXT, function (url) {
-                // url is the value of EXTRA_TEXT 
+                // url is the value of EXTRA_TEXT
             }, function() {
                 // There was no extra supplied.
             });
