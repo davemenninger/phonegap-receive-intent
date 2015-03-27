@@ -9,4 +9,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <gap:plugin name="uk.co.ibcomputing.phonegapbuild.plugins.receivesendintents" >
+        <param name="LAUNCHMODE" value="singleTop" />
+    </gap:plugin>
+    <gap:plugin name="net.tunts.webintent" />
 </widget>
