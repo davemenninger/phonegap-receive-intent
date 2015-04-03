@@ -26,8 +26,27 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
+        <script type="text/javascript" charset="utf-8">
+
+            // Wait for device API libraries to load
+            function onLoad() {
+                alert("onLoad");
+                document.addEventListener("deviceready", onDeviceReady, false);
+                                        }
+
+            // device APIs are available
+            function onDeviceReady() {
+                alert("onDeviceReady");
+                window.plugins.webintent.getUri(function(url) {
+                    if(url !== "") {
+                        // url is the url the intent was launched with
+                        document.querySelector("#test").innerHTML = "URL was "+url;
+                    }
+                });
+            }
+        </script>
     </head>
-    <body>
+        <body onload="onLoad()">
         <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
