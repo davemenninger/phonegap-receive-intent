@@ -12,5 +12,5 @@
     <gap:plugin name="uk.co.ibcomputing.phonegapbuild.plugins.receivesendintents" >
         <param name="LAUNCHMODE" value="singleTop" />
     </gap:plugin>
-    <gap:plugin name="com.borismus.webintent.WebIntent" />
+    <gap:plugin name="WebIntent" value="com.borismus.webintent.WebIntent" />
 </widget>
