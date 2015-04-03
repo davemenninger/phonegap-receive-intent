@@ -28,7 +28,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener('deviceready', function(){console.log("something");}, false);
-        //document.addEventListener('deviceready', function(){alert("something");}, false);
+        document.addEventListener('deviceready', function(){alert("something");}, false);
     },
     // deviceready Event Handler
     //
@@ -46,8 +46,8 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-        //alert('Received Event: ' + id);
+        connsole.log('Received Event: ' + id);
+        alert('Received Event: ' + id);
         webintent.hasExtra(webintent.EXTRA_TEXT,
             function(hasExtra){
                 if(hasExtra){
