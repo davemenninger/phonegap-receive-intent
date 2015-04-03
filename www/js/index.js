@@ -48,6 +48,22 @@ var app = {
 
         console.log('Received Event: ' + id);
         //alert('Received Event: ' + id);
+        webintent.hasExtra(webintent.EXTRA_TEXT,
+            function(hasExtra){
+                if(hasExtra){
+                    webintent.getExtra(webintent.EXTRA_TEXT,
+                        function(value){
+                            alert("value is "+value);
+                        },
+                        function(){
+                            alert("error1");
+                        });
+                }
+            },
+            function(){
+                alert("error2");
+            }
+        );
     }
 };
 
