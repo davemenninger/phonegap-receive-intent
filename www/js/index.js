@@ -28,7 +28,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener('deviceready', function(){console.log("something");}, false);
-        //document.addEventListener('deviceready', function(){alert("something");}, false);         
+        //document.addEventListener('deviceready', function(){alert("something");}, false);
     },
     // deviceready Event Handler
     //
@@ -47,7 +47,13 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        alert('Received Event: ' + id);
+        //alert('Received Event: ' + id);
+        window.plugins.webintent.getUri(function(url) {
+            if(url !== "") {
+                // url is the url the intent was launched with
+                document.querySelector("#deviceready").innerHTML = "URL was "+url;
+            }
+        });
     }
 };
 
