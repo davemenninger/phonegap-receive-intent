@@ -27,9 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('resume', this.onResume, false);
-        document.addEventListener('deviceready', function(){console.log("something");}, false);
         document.addEventListener('deviceready', function(){alert("something");}, false);
+        document.addEventListener('resume', function(){alert("resume"), false);
     },
     // deviceready Event Handler
     //
@@ -37,9 +36,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-    },
-    onResume: function() {
-        app.resumeEvent('resume');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
