@@ -38,13 +38,14 @@
 
             // device APIs are available
             function onDeviceReady() {
-                alert("onDeviceReady");
+                alert("onDeviceReady1");
                 window.plugins.webintent.getUri(function(url) {
                     if(url !== "") {
                         // url is the url the intent was launched with
                         document.querySelector("#urlgoeshere").innerHTML = "URL was "+url;
                     }
                 });
+                alert("onDeviceReady2");
             }
         </script>
     </head>
