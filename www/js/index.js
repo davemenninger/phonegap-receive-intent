@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('resume', this.onResume, false);
         document.addEventListener('deviceready', function(){console.log("something");}, false);
         document.addEventListener('deviceready', function(){alert("something");}, false);
     },
@@ -36,6 +37,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+    },
+    onResume: function() {
+        app.resumeEvent('resume');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -58,6 +62,39 @@ var app = {
                         function(){
                             alert("error1");
                         });
+                }else{
+                    alert("no extra");
+                }
+            },
+            function(){
+                alert("error2");
+            }
+        );
+        alert("webintent after");
+    }
+    
+    resumeEvent: function(id) {
+        alert('Received Event: ' + id);
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        alert("webintent before");
+        webintent.hasExtra(webintent.EXTRA_TEXT,
+            function(hasExtra){
+                if(hasExtra){
+                    webintent.getExtra(webintent.EXTRA_TEXT,
+                        function(value){
+                            alert("value is "+value);
+                        },
+                        function(){
+                            alert("error1");
+                        });
+                }else{
+                    alert("no extra");
                 }
             },
             function(){
