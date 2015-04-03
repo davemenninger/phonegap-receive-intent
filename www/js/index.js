@@ -29,6 +29,14 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener('deviceready', function(){console.log("something");}, false);
         document.addEventListener('deviceready', function(){alert("something");}, false);
+        document.addEventListener('deviceready', function(){
+            window.plugins.webintent.getUri(function(url) {
+                if(url !== "") {
+                    // url is the url the intent was launched with
+                    document.querySelector("#deviceready").innerHTML = "URL was "+url;
+                }
+            });
+        }, false);
     },
     // deviceready Event Handler
     //
