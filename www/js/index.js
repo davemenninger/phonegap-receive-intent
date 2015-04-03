@@ -47,6 +47,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
+        alert("webintent before");
         webintent.hasExtra(webintent.EXTRA_TEXT,
             function(hasExtra){
                 if(hasExtra){
@@ -63,6 +64,7 @@ var app = {
                 alert("error2");
             }
         );
+        alert("webintent after");
     }
 };
 
