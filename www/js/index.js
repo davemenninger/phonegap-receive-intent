@@ -27,8 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('resume', this.onResume, false);
-        document.addEventListener('deviceready', function(){console.log("something");}, false);
+        document.addEventListener('resume', function(){alert("resume"), false);
         document.addEventListener('deviceready', function(){alert("something");}, false);
     },
     // deviceready Event Handler
@@ -71,9 +70,9 @@ var app = {
             }
         );
         alert("webintent after");
-    }
-    
-    resumeEvent: function(id) {
+    },
+
+    resumeEvent: function(id){
         alert('Received Event: ' + id);
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
