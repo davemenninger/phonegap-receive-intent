@@ -71,8 +71,8 @@ var app = {
             }
         );
         alert("webintent after");
-    }
-    
+    },
+
     resumeEvent: function(id) {
         alert('Received Event: ' + id);
         var parentElement = document.getElementById(id);
